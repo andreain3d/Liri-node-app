@@ -10,7 +10,13 @@ switch (process.argv[2]) {
   case "concert-this":
     break;
   case "spotify-this-song":
-    var songTitle = process.argv[3];
+    var songTitle = "";
+    if (process.argv[3]) {
+      songTitle = process.argv[3];
+    } else {
+      songTitle = "The Sign Ace of Base";
+    }
+
     for (i = 4; i < process.argv.length; i++) {
       songTitle = songTitle + " " + process.argv[i];
     }
@@ -23,15 +29,10 @@ switch (process.argv[2]) {
         return console.log("Error occurred: " + err);
       }
 
-      fs.writeFile("log.txt", JSON.stringify(data.tracks.items), function(err) {
-        // If the code experiences any errors it will log the error to the console.
-        if (err) {
-          return console.log(err);
-        }
-
-        // Otherwise, it will print: "movies.txt was updated!"
-        console.log("movies.txt was updated!");
-      });
+      console.log("Track Name: " + data.tracks.items[0].name);
+      console.log("Artist: " + data.tracks.items[0].artists[0].name);
+      console.log("Preview: " + data.tracks.items[0].preview_url);
+      console.log("Album: " + data.tracks.items[0].album.name);
     });
     break;
   case "movie-this":
