@@ -31,11 +31,16 @@ var cmdOptions = function(cmdToExecute, searchTerms) {
           for (i = 0; i < response.data.length; i++) {
             console.log("----------------------------------");
             console.log("Venue: " + response.data[i].venue.name);
+            var region = "";
+            if (response.data[i].venue.region) {
+              region = response.data[i].venue.region + ", ";
+            }
             console.log(
               "Location: " +
                 response.data[i].venue.city +
                 ", " +
-                response.data[i].venue.region
+                region +
+                response.data[i].venue.country
             );
             console.log(
               "Date: " +
