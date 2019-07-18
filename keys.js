@@ -5,6 +5,8 @@ exports.spotify = {
   secret: process.env.SPOTIFY_SECRET
 };
 
+exports.bandsintown = process.env.BIT_ID;
+
 [
   {
     album: {
