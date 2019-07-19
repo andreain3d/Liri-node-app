@@ -154,6 +154,7 @@ if (process.argv[2] === "do-what-it-says") {
       var fileData = data.split(",");
       cmdToExecute = fileData[0];
       searchTerms = fileData[1];
+      cmdOptions(cmdToExecute, searchTerms);
     }
   });
 } else {
@@ -163,6 +164,5 @@ if (process.argv[2] === "do-what-it-says") {
   for (i = 4; i < process.argv.length; i++) {
     searchTerms = searchTerms + " " + process.argv[i];
   }
+  cmdOptions(cmdToExecute, searchTerms);
 }
-
-cmdOptions(cmdToExecute, searchTerms);
