@@ -11,7 +11,8 @@ It then runs the main switch function using the input variables of the command a
  *If the command is spotify-this-song, it searches the Spotify API and returns track data for based on the search terms as a song title.
 \*If the command is movie-this, it searches the OMDB API and returns movie data for a movie based on the search terms as a movie title.
 
-##To Run This App
+## To Run This App
+
 Liri takes in two parameters seperated by spaces like so:
 
 node liri <command> <search terms>
@@ -26,7 +27,8 @@ To read and execute the command in the external text file titled random.txt, sim
 
 node liri do-what-it-says
 
-###Technologies Used
+### Technologies Used
+
 Node
 JS ES6
 Node packages:
@@ -39,5 +41,6 @@ Spotify
 Bands in Town
 OMDB
 
-###Credits
+### Credits
+
 Code by Andrea Nicholson.
